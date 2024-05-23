@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Google Search Raindrop Sidebar",
+    "version": "1.0",
+    "description": "Injects a sidebar with Raindrop.io on Google Search results",
+    "permissions": ["webRequest", "webRequestBlocking", "https://*.google.com/*", "https://app.raindrop.io/*"],
+    "content_scripts": [
+      {
+        "matches": ["https://www.google.com/search*", "https://www.google.com.br/search*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "background": {
+      "scripts": ["background.js"]
+    }
+  }
